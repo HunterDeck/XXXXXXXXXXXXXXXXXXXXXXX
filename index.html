@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Наслідки війни</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="Наслідки війни, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/logo.png" alt="Наслідки війни">
+    <p>Наслідки війни</p>
+  </a>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Наслідки війни">
+            <p>Наслідки війни</p>
+          </a>
+
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Війна</span></li>
+            <li><span>Наслідки</span></li>
+            <li><span>Бойові дії</span></li>
+            <li><span>Повітряні тривоги</span></li>
+            <li><span>Статистика</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>Ми<br>Обов'язково<br>Переможемо</h1>
+                <button class="cta">Зв'язок з розробником
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+                <img src="assets/img/introduction-visual.png" alt="Welcome">
+              </div>
+              <div class="intro--options">
+                <a href="#0">
+                  <h3>Ласкаво просимо на сайт про наслідки війни!</h3>
+                  <p>Тут ви знайдете інформацію про наслідки воєнних конфліктів та їх вплив на людей, економіку та середовище.</p>
+                  
+                    <a class="btn btn-base btn-parent download" target="_blank" href="https://bank.gov.ua/ua/about/support-the-armed-forces">
+                    Донат на ЗСУ</a>
+                </a>
+
+                </a>
+                <a href="#0">
+                  <h3>Статистика</h3>
+                  <p>До перегляду на сайті доступний опис жахливих подій з прив'язкою до місцевості , як наслідок повномасштабного зброєного нападу РФ на Україну з початку 24.02.2022</p>
+                </a>
+                <a href="#0">
+
+                  <style>
+                    .timer {
+                      display: flex;
+                      justify-content: flex-start;
+                      align-items: center;
+                      padding: 10px;
+                      background-color: #0a0a0a00;
+                      width: 310px;
+                    }
+                    
+                    .timer__label {
+                      margin-right: 10px;
+                      font-weight: bold;
+                      font-size: 16px;
+                    }
+                    
+                    .timer__value {
+                      font-size: 28px;
+                      font-weight: bold;
+                    }
+                    
+                    .timer__unit {
+                      font-size: 14px;
+                      color: rgb(97, 20, 20);
+                      margin-left: 3px;
+                    }
+                  </style>
+                  
+                  <div class="timer">
+                    <span class="timer__label">Україна захищає світ:</span>
+                    <span class="timer__days timer__value"></span>
+                    <span class="timer__unit">днів</span>
+                    <span class="timer__hours timer__value"></span>
+                    <span class="timer__unit">годин</span>
+                    <span class="timer__minutes timer__value"></span>
+                    <span class="timer__unit">хвилин</span>
+                  </div>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const beginDate = new Date('2022-02-24T04:00:00');
+                      let timerId = null;
+                      function declensionNum(num, words) {
+                      return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+                      }
+                      function countdownTimer() {
+                      const diff = new Date() - beginDate;
+                      const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+                      const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+                      const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+                      $days.textContent = days < 10 ? '0' + days : days;
+                      $hours.textContent = hours < 10 ? '0' + hours : hours;
+                      $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+                      $days.dataset.title = declensionNum(days, ['день', 'дні', 'днів']);
+                      $hours.dataset.title = declensionNum(hours, ['година', 'години', 'годин']);
+                      $minutes.dataset.title = declensionNum(minutes, ['хвилину', 'хвилини', 'хвилин']);
+                      }
+                      const $days = document.querySelector('.timer__days');
+                      const $hours = document.querySelector('.timer__hours');
+                      const $minutes = document.querySelector('.timer__minutes');
+                      countdownTimer();
+                      timerId = setInterval(countdownTimer, 1000);
+                    });
+                    </script>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>Наслідки війни. Натискаючи на маркер відкриється фото/відео події, яка відбулася у поточному місці</h2>
+              <div class="work--lockup">
+                <h2></h2>
+                <div id="map" style="height: 600px;"></div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+          
+                <script>
+                  var openStreetMapLayer = L.tileLayer(
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {
+                      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                    }
+                  );
+          
+                  var googleMapLayer = L.tileLayer(
+                    'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',
+                    {
+                      attribution: 'Map data &copy; <a href="https://www.google.com/maps">Google Maps</a>',
+                    }
+                  );
+          
+                  var map = L.map('map', {
+                    center: [48.600, 31.421],
+                    zoom: 5.3,
+                    layers: [openStreetMapLayer], // Початковий шар - OpenStreetMap
+                  });
+          
+                  var baseLayers = {
+                    "OpenStreetMap": openStreetMapLayer,
+                    "Google Maps": googleMapLayer,
+                  };
+          
+                  L.control.layers(baseLayers).addTo(map);
+          
+                  var marker1 = L.marker([46.426492, 30.768377]).addTo(map);
+                  marker1.bindPopup("<h2>Одеса підрив людини на ворожій якірній міні</h2>").openPopup();
+
+                  var marker2 = L.marker([50.536326, 30.232860]).addTo(map);
+                  marker2.bindPopup("<h2>Форпост ЖИРАФ м.Ірпінь</h2>").openPopup(); 
+                  
+                  var marker3 = L.marker([50.542832, 30.264270]).addTo(map);
+                  marker3.bindPopup("<h2>Ірпінський ЖК</h2>").openPopup();
+                  
+                  var marker4 = L.marker([50.542085, 30.230888]).addTo(map);
+                  marker4.bindPopup("<h2>Вбиті під час окупації мирні мешканці, м.Буча, фото Квітень 2022</h2>").openPopup();
+                  
+                  var marker5 = L.marker([45.256556, 30.206427]).addTo(map);
+                  marker5.bindPopup("<h2>о.Зміїний</h2>").openPopup();
+                  
+                  var marker6 = L.marker([45.178720, 30.925150]).addTo(map);
+                  marker6.bindPopup("<h2>Крейслер москва</h2>").openPopup();
+                  
+                  var marker7 = L.marker([50.592835, 30.211348]).addTo(map);
+                  marker7.bindPopup("<h2>Мрія</h2>").openPopup();
+                  
+                  var marker8 = L.marker([50.502568, 30.237812]).addTo(map);
+                  marker8.bindPopup("<h2>Кладовище автомобілів</h2>").openPopup();
+                  
+                  var marker9 = L.marker([50.510826, 30.257473]).addTo(map);
+                  marker9.bindPopup("<h2>Підірваний ЖД міст Ірпінь</h2>").openPopup();
+                  
+                  var marker10 = L.marker([50.535472, 30.233083]).addTo(map);
+                  marker10.bindPopup("<h2>Перший бій ТРО та ЗСУ з окупантами у м.Ірпінь</h2>").openPopup();
+                  
+                  var marker11 = L.marker([50.533705, 30.233404]).addTo(map);
+                  marker11.bindPopup("<h2>Будинок культури Ірпінь</h2>").openPopup();
+                  
+                  var marker12 = L.marker([47.09813995762753, 37.599654299637805]).addTo(map);
+                  marker12.bindPopup("<h2>Оборона «Азовсталі» — бойові дії, що тривали з 18 березня до 20 травня 2022 року. </h2>").openPopup();
+                  
+                  var marker13 = L.marker([47.09612571487393, 37.548606514288714]).addTo(map);
+                  marker13.bindPopup("<h2>Драмтеатр</h2>").openPopup();
+                  
+                  var marker14 = L.marker([49.4765910102019, 32.03739106556922]).addTo(map);
+                  marker14.bindPopup("<h2>Черкаський міст</h2>").openPopup();
+
+                  var marker15 = L.marker([48.76617651080068, 30.216592078929818]).addTo(map);
+                  marker15.bindPopup("<h2>28.04.2023 загинуло 23 осіб. Умань</h2>").openPopup();
+
+                  var marker16 = L.marker([50.422607301254914, 30.46518099266644]).addTo(map);
+                  marker16.bindPopup("<h2>Приліт ракети в житловий будинок у перші дні війни</h2>").openPopup();
+
+                  var marker17 = L.marker([50.46181453375663, 30.48777811702721]).addTo(map);
+                  marker17.bindPopup("<h2>ЖК Львівський</h2>").openPopup();
+
+                  var marker18 = L.marker([50.455232749101356, 30.528383962566966]).addTo(map);
+                  marker18.bindPopup("<h2>Міст Кличка</h2>").openPopup();
+
+                  var marker19 = L.marker([50.44363545289383, 30.512392793421675]).addTo(map);
+                  marker19.bindPopup("<h2>Київ університет</h2>").openPopup();
+
+                  var marker20 = L.marker([50.439434570147604, 30.496593578182303]).addTo(map);
+                  marker20.bindPopup("<h2>...</h2>").openPopup();
+
+                  var marker21 = L.marker([50.47339442347717, 30.45952783691513]).addTo(map);
+                  marker21.bindPopup("<h2>Вишка Дорогожичі</h2>").openPopup();
+
+                  var marker22 = L.marker([50.50369241249292, 30.41744170678802]).addTo(map);
+                  marker22.bindPopup("<h2>ТРЦ Ретровіль</h2>").openPopup();
+
+                  var marker23 = L.marker([51.49481780383409, 31.294643788645217]).addTo(map);
+                  marker23.bindPopup("<h2>Готель «Україна» Чернігів</h2>").openPopup();
+
+                  var marker24 = L.marker([48.726159586710644, 37.54346987320433]).addTo(map);
+                  marker24.bindPopup("<h2>Ворожі ракети вдарили по Ж/Д вокзалу</h2>").openPopup();
+
+                  var marker25 = L.marker([48.68757402636649, 38.08017854126615]).addTo(map);
+                  marker25.bindPopup("<h2>Соледар</h2>").openPopup();
+
+                  var marker26 = L.marker([50.59242837237098, 30.503614520704275]).addTo(map);
+                  marker26.bindPopup("<h2>Вишгород.Збиття ворожого гелікоптера </h2>").openPopup();
+
+                  var marker27 = L.marker([48.58964516451908, 38.00095157707137]).addTo(map);
+                  marker27.bindPopup("<h2>Фортеця «Бахмут»</h2>").openPopup();
+
+                  var marker28 = L.marker([49.23837216957281, 28.492278074068274]).addTo(map);
+                  marker28.bindPopup("<h2>Ракетний удар по Вінниці стався 14 липня 2022 року о 10:45 за київським часом. Унаслідок атаки загинули 27 осіб, поранено 202, безвісти зникло 8 осіб.</h2>").openPopup();
+
+                  var marker29 = L.marker([48.41923725066761, 35.067850871489384]).addTo(map);
+                  marker29.bindPopup("<h2>Ракетний удар по житловому будинку в Дніпрі</h2>").openPopup();
+
+                  var marker30 = L.marker([47.50060614382838, 34.61047200031456]).addTo(map);
+                  marker30.bindPopup("<h2>Люди блокують просування російських військ до Запорізької АЕС</h2>").openPopup();
+
+                  var marker31 = L.marker([50.44057501166691, 30.147633762230754]).addTo(map);
+                  marker31.bindPopup("<h2>...</h2>").openPopup();
+
+                  var marker32 = L.marker([47.845641471150365, 35.126201891485366]).addTo(map);
+                  marker32.bindPopup("<h2>Запоріжжя</h2>").openPopup();
+
+                  var marker33 = L.marker([47.94286917989081, 37.50441089029114]).addTo(map);
+                  marker33.bindPopup("<h2>Мар’їнка. Знищене місто російськими окупантами.</h2>").openPopup();
+
+                  var marker34 = L.marker([48.45206056409492, 34.98320846441412]).addTo(map);
+                  marker34.bindPopup("<h2>Пес Крим</h2>").openPopup();
+
+                  var marker35 = L.marker([46.637696126375445, 32.615581139328654]).addTo(map);
+                  marker35.bindPopup("<h2>Владислав Пастухов став символом нескореності Херсона.</h2>").openPopup();
+
+                  var marker36 = L.marker([46.67672537392123, 32.50655128981521]).addTo(map);
+                  marker36.bindPopup("<h2>Будинок культури Ірпінь</h2>").openPopup();
+
+                  var marker37 = L.marker([49.99972739401644, 36.320740178761035]).addTo(map);
+                  marker37.bindPopup("<h2>Район у Харкові, який зазнав найбільших руйнувань</h2>").openPopup();
+
+                  var marker38 = L.marker([50.00465526847429, 36.23608530898158]).addTo(map);
+                  marker38.bindPopup("<h2>...</h2>").openPopup();
+
+                  var marker39 = L.marker([45.30281116657074, 36.511046830207434]).addTo(map);
+                  marker39.bindPopup("<h2>Кримський міст</h2>").openPopup();
+
+                  var marker40 = L.marker([46.67026545737496, 32.72018291130996]).addTo(map);
+                  marker40.bindPopup("<h2>Антонівський міст</h2>").openPopup();
+
+                  var marker41 = L.marker([49.0699521601772, 33.424823197991145]).addTo(map);
+                  marker41.bindPopup("<h2>Ракетний удар по ТЦ «Амстор» у Кременчуці — терористичний акт, здійснений росіянами 27 червня 2022 року.</h2>").openPopup();
+
+                  var marker42 = L.marker([47.827734601135646, 37.713187067216644]).addTo(map);
+                  marker42.bindPopup("<h2>Оленівка</h2>").openPopup();
+
+                  var marker43 = L.marker([49.19913021330063, 37.234479990224784]).addTo(map);
+                  marker43.bindPopup("<h2>Ізюм</h2>").openPopup();
+
+                  var marker44 = L.marker([46.77888476989235, 33.36908397550429]).addTo(map);
+                  marker44.bindPopup("<h2>Каховська ГЕС</h2>").openPopup();
+
+                  var marker45 = L.marker([51.191561879574564, 32.818983581157696]).addTo(map);
+                  marker45.bindPopup("<h2>Бахмач</h2>").openPopup();
+
+                  var marker46 = L.marker([50.491029348015466, 30.2590523336185]).addTo(map);
+                  marker46.bindPopup("<h2>Ірпінь. Зруйнований міст</h2>").openPopup();
+
+                  var marker47 = L.marker([50.543298, 30.227269]).addTo(map);
+                  marker47.bindPopup("<h2>Буча. Знищена колона рашистів 27.02.2022</h2>").openPopup();
+
+                  var marker48 = L.marker([46.627836, 32.753576]).addTo(map);
+                  marker48.bindPopup("<h2>Олешки</h2>").openPopup();
+
+                  var marker49 = L.marker([46.075534, 30.469248]).addTo(map);
+                  marker49.bindPopup("<h2>Міст Затока</h2>").openPopup();
+
+
+
+
+
+
+
+
+                  // Додати подію 'mouseover' для маркера 1
+                  marker1.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на відео та текст для маркера 1
+                    marker1.setPopupContent("<video width='300' height='300' controls><source src='Одеса підрив жителя на міні.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Підрив місцевого жителя на ворожій якірній міні. Ігнорування безпекових попереджень</p>");
+                  });
+                  // Додати подію 'mouseover' для маркера 2
+                  marker2.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 2
+                    marker2.setPopupContent("<img src='Форпост_«Жираф»_Битва_за_Київ__Outpost_Giraffe_The_Battle_.gif' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Спроба роzіян прорватись у місто Ірпінь 27.04.2022 , плани орків на той день успішно зірвались завдяки ТРО та ЗСУ</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 3
+                  marker3.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 3
+                    marker3.setPopupContent("<img src='Ірпінські липки ЖК СМУ.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Один з найкрасивіших районів м.Ірпінь перетворився на руїни. Фото травень 2022</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 4
+                  marker4.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 4
+                    marker4.setPopupContent("<img src='Вбиті роzіянами люди у Бучі під час окупації міста.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Вбиті під час окупації мирні мешканці, м.Буча, фото Квітень 2022</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 5
+                  marker5.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 2
+                    marker5.setPopupContent("<img src='Місце де послали нахуй корабель.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Місце де було вказано напрямок руху для російського військового корабля , який згодом послухав сказане й успішно затонув</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 6
+                  marker6.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 6
+                    marker6.setPopupContent("<img src='Затонувший крейслер москва з моряками.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>завдяки ЗСУ надводний російський військовий корабель став підводним.</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 7
+                  marker7.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 7
+                    marker7.setPopupContent("<img src='Гостомель Мрія.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Розбитий російськими окупантами найбільший у світі грузовий літак Мрія. Події початок березня 2022</p></div>");
+                  });
+                  // Додати подію 'mouseover' для маркера 8
+                  marker8.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на відео та текст для маркера 8
+                    marker8.setPopupContent("<video width='300' height='300' controls><source src='video_2023-06-03_19-04-36.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Кладовище автомобілів звезених з міста після деокупації </p>");
+                  });
+
+                  // Додати подію 'mouseover' для маркера 9
+                  marker9.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на зображення для маркера 9
+                    marker9.setPopupContent("<img src='ЖД МІСТ ІРПІНЬ.gif' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Підірваний міст </p></div>");
+                  });
+
+                  // Додати подію 'mouseover' для маркера 10
+                  marker10.on('mouseover', function () {
+                    // Змінити вміст випливаючого вікна на відео та текст для маркера 10
+                    marker10.setPopupContent("<video width='300' height='300' controls><source src='Перший бій Жираф.MP4' type='video/mp4'>Your browser does not support the video tag.</video><p>Перший бій ТРО Ірпеня та ЗСУ з окупантами. Відео знято ранком 27.02.2022 бойцем ТРО. В подальшому, 05.03.2022 оркам вдалося прорватись у місто, тривали запеклі бої.</p>");
+                  });
+                  // Додати подію 'click' для маркера 11
+                  marker11.on('click', function () {
+
+                    // Відкрити нове вікно з відображенням 3D-моделі
+                    window.open('https://sketchfab.com/models/cd3fb81d45954a579c35a719465e81eb/embed?autostart=1&amp;preload=1&amp;ui_infos=0&amp;ui_inspector=0&amp;ui_watermark_link=0&amp;ui_watermark=0&amp;ui_help=0&amp;ui_settings=0&amp;ui_vr=0');
+                  });
+
+                  marker12.on('mouseover', function () {
+                    marker12.setPopupContent("<video width='300' height='300' controls><source src='Азовсталь відео.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Героїчна оборона Азовсталі завадила планам окупантів. Вічна пам'ять всім героям. Події періоду 18 березня - 20 травня 2022. </p>");
+                  });
+
+                  marker13.on('mouseover', function () {
+                    marker13.setPopupContent("<img src='Маріуполь театр.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Драмтеатр</p></div>");
+                  });
+
+                  marker14.on('mouseover', function () {
+                    marker14.setPopupContent("<img src='Черкаський міст.jpeg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Черкаський міст</p></div>");
+                  });
+
+                  marker15.on('mouseover', function () {
+                    marker15.setPopupContent("<img src='Умань.jpeg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>28.04.2023 загинуло 23 осіб. Умань</p></div>");
+                  });
+
+                  marker16.on('mouseover', function () {
+                    marker16.setPopupContent("<img src='лобановського.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Приліт ракети в житловий будинок у перші дні війни</p></div>");
+                  });
+
+                  marker17.on('mouseover', function () {
+                    marker17.setPopupContent("<img src='жк львівський.webp' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>ЖК Львівський </p></div>");
+                  });
+
+                  marker18.on('mouseover', function () {
+                    marker18.setPopupContent("<img src='Жміст кличка.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>міст кличка </p></div>");
+                  });
+
+                  marker19.on('mouseover', function () {
+                    marker19.setPopupContent("<img src='Київ університет.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                  });
+
+                  marker20.on('mouseover', function () {
+                    marker20.setPopupContent("<img src='самсунг.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                  });
+
+                  marker21.on('mouseover', function () {
+                    marker21.setPopupContent("<img src='вишка дорогожичі.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p> Ракетні удари рф перших днів війни </p></div>");
+                  });
+
+                  marker22.on('mouseover', function () {
+                    marker22.setPopupContent("<img src='ретровіль.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>ТРЦ Ретровіль</p></div>");
+                  });
+
+                  marker23.on('mouseover', function () {
+                    marker23.setPopupContent("<img src='Чернігів.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Готель «Україна»</p></div>");
+                  });
+
+                  marker24.on('mouseover', function () {
+                  marker24.setPopupContent("<img src='Краматорськ.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Ворожі ракети вдарили по Ж/Д вокзалу</p></div>");
+                });
+
+                marker25.on('mouseover', function () {
+                  marker25.setPopupContent("<img src='Соледар.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                });
+
+                marker26.on('mouseover', function () {
+                  marker26.setPopupContent("<img src='вишгород збиття.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Збиття ворожого гелікоптера</p></div>");
+                });
+
+                marker27.on('mouseover', function () {
+                  marker27.setPopupContent("<video width='300' height='300' controls><source src='Бахмут.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Фортеця Бахмут.</p>");
+                });
+
+                marker28.on('mouseover', function () {
+                  marker28.setPopupContent("<img src='Вінниця.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Ракетний удар по Вінниці стався 14 липня 2022 року о 10:45 за київським часом. Унаслідок атаки загинули 27 осіб, поранено 202, безвісти зникло 8 осіб.</p></div>");
+                });
+
+                marker29.on('mouseover', function () {
+                  marker29.setPopupContent("<video width='300' height='300' controls><source src='Дніпро відео.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Ракетний удар по житловому будинку в Дніпрі стався 14 січня 2023 року о 15:30 за місцевим часом. Атаку здійснено військами РФ під час повномасштабного вторгнення до України. Станом на 19 січня було відомо про 46 загиблих, серед них три дитини, і 75 поранених.</p>");
+                });
+
+                marker30.on('mouseover', function () {
+                  marker30.setPopupContent("<img src='енергодар.jpeg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Люди блокують просування російських військ до Запорізької АЕС</p></div>");
+                });
+
+                marker31.on('mouseover', function () {
+                  marker31.setPopupContent("<img src='Житомирська траса.webp' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                });
+
+                marker32.on('mouseover', function () {
+                  marker32.setPopupContent("<img src='Запоріжжя.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                });
+
+                marker33.on('mouseover', function () {
+                  marker33.setPopupContent("<img src='Марїнка.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Мар’їнка. Знищене місто російськими окупантами.</p></div>");
+                });
+
+                marker34.on('mouseover', function () {
+                  marker34.setPopupContent("<img src='Пес Крим Дніпро.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Пес Крим. Його фото та образ поширилися соцмережами та стали символом горя через вбивства українців російськими окупантами</p></div>");
+                });
+
+                marker35.on('mouseover', function () {
+                  marker35.setPopupContent("<video width='300' height='300' controls><source src='Окупанти в Херсоні. Чоловік з прапором України застрибнів на ворожій БТР.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Владислав Пастухов став символом нескореності Херсона.</p>");
+                });
+
+                marker36.on('mouseover', function () {
+                  marker36.setPopupContent("<img src='Чорнобаївка.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Бої́ під Чорнобаївкою — бої, що тривали з 27 лютого по 11 листопада 2022 року в ході війни Росії проти України біля села Чорнобаївка на Херсонщині. Станом на 9 липня ЗСУ 26 разів знищували техніку рашистів.</p></div>");
+                });
+
+                marker37.on('mouseover', function () {
+                  marker37.setPopupContent("<video width='300' height='300' controls><source src='Салтівка відео.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Район у Харкові, який зазнав найбільших руйнувань</p>");
+                });
+
+                marker38.on('mouseover', function () {
+                  marker38.setPopupContent("<img src='площа.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                });
+
+                marker39.on('mouseover', function () {
+                  marker39.setPopupContent("<img src='Кримський міст.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Поздоровлення путіна з днем народження");
+                  });
+
+                  marker40.on('mouseover', function () {
+                    marker40.setPopupContent("<img src='Антонівський міст.jpeg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>...</p></div>");
+                  });
+
+                  marker41.on('mouseover', function () {
+                  marker41.setPopupContent("<img src='Кременчуг.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Ракетний удар по ТЦ «Амстор» у Кременчуці — терористичний акт, здійснений росіянами 27 червня 2022 року.</p></div>");
+                  });
+
+                  marker42.on('mouseover', function () {
+                  marker42.setPopupContent("<img src='Оленівка.png' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>28 липня на території виправної колонії № 120 в Оленівці, де утримувалися захисники «Азовсталі», російські окупанти вчинили масове вбивство полонених, внаслідок якого загинуло 53 бійця полку «Азов», ще 130 отримали поранення.</p></div>");
+                });
+                
+                marker43.on('mouseover', function () {
+                  marker43.setPopupContent("<img src='Ізюм.jpg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Після деокупації                   Ізюма у Харківській області у місті виявили масові поховання. У Мінреінтеграції заявили, що кількість загиблих в Ізюмі може перевищувати число жертв у Бучі.</p></div>");
+                });
+
+                  marker44.on('mouseover', function () {
+                    marker44.setPopupContent("<video width='300' height='300' controls><source src='Каховка відео.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>06.06.2023 Терористи РФ вчинили найбільшу техногено-екологічну катастрофу. </p>");
+                });
+
+
+                  marker45.on('mouseover', function () {
+                    marker45.setPopupContent("<video width='300' height='300' controls><source src='Бахмач.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Бахмач. Чоловік став на шляху колони російських броньовиків із маркуванням Z. Своїми діями він намагався зупинити терористів РФ.</p>");
+                });
+
+
+                  marker46.on('mouseover', function () {
+                    marker46.setPopupContent("<video width='300' height='300' controls><source src='Міст ірпінь.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Ірпінь зруйнований міст на Київ. Деякий час періодично був порятунком для людей від ворожих мін та куль.</p>");
+                });
+
+                marker47.on('mouseover', function () {
+                  marker47.setPopupContent("<img src='1.jpeg' alt='Зображення' width='300' height='300' style='background-color: transparent;'><p>Знищена колона терористів РФ яку ви бачили на відео біля ТРЦ Жираф.</p></div>");
+                });
+
+                marker48.on('mouseover', function () {
+                    marker48.setPopupContent("<video width='300' height='300' controls><source src='Олешки Відео.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>07.06.2023 м.Олешки. Затоплене в наслідок знищення окупантами Каховської ГЕС</p>");
+                });
+
+                marker49.on('mouseover', function () {
+                    marker49.setPopupContent("<video width='300' height='300' controls><source src='Затока 02.06.2022.mp4' type='video/mp4'>Your browser does not support the video tag.</video><p>Влучання ракети терористів РФ у міст в смт.Затока </p>");
+                });
+
+
+                
+                  var scale = new maplibregl.ScaleControl({
+                    maxWidth: 80,
+                    unit: 'imperial'
+                  });
+                  map.addControl(scale);
+                  scale.setUnit('metric');
+                  
+                  </script>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>Бойові дії</h2>
+              <div class="work--lockup">
+                <section>
+                  <h1></h1>
+                </section>
+                <div id="map2"></div>
+                <script>
+                  function loadMaps() {
+                    var mapElement2 = document.getElementById('map2');
+                    var mapUrl2 = 'https://deepstatemap.live/#6/50.123/36.789'; // Замініть це значення на URL другої карти
+                    mapElement2.innerHTML = '<iframe src="' + mapUrl2 + '" width="100%" height="500px"></iframe>';
+                  }
+                  loadMaps();
+                </script>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <h2>Повітряні тривоги</h2>
+              <div class="about--lockup">
+                <section>
+                  <h1></h1>
+                </section>
+                <div id="map3"></div>
+                <script>
+                  function loadMaps() {
+                    var mapElement3 = document.getElementById('map3');
+                    var mapUrl3 = 'https://map.ukrainealarm.com/'; // Замініть це значення на URL карти повітряних тривог
+                    mapElement3.innerHTML = '<iframe src="' + mapUrl3 + '" width="100%" height="500px"></iframe>';
+                  }
+                  loadMaps();
+                </script>
+              </div>
+            </div>
+          </li>
+
+          
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <ul class="modal--options">
+                    <li><a href="https://savelife.in.ua/" target="_blank">Повернись живим</a></li>
+                    <li><a href="https://war.city/uk/objects/" target="_blank">Руйнування у 3D</a></li>
+                    <li><a href="mailto:valeriabulykh@gmail.com">Лист розробнику</a></li>
+                  </ul>
+                  <div class="center-block">
+                    <div class="modal--content" style="width: 1235px; height: 713px; background-color: rgba(0, 0, 0, 0); overflow: auto; padding-left: 15px; font-size: 18px; ">
+                      <p style="font-family: Consolas, monospace; font-size: 24px; line-height: 1.5;">
+                        <style>
+                          
+                          h2 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                            color: rgb(255, 255, 255);                       
+                          }
+
+                          h3 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                          }
+
+                          h4 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                          }
+
+                          h5 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                          }
+
+                          h6 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                          }
+
+                          h7 {
+                            text-align: center;
+                            font-size: 24px;
+                            font-family: Consolas, monospace;
+                          }
+                        </style>
+                        <h2>Скільки окупованої території?</h2>
+                        
+                        "Після успіхів української армії на Харківщині протягом 8-12 вересня вдалося звільнити майже всю область. 4% території регіону, які вказані на мапі - це територія, над якою ЗСУ ще не встановили повного контролю, однак окупант із них практично відійшов, вчинивши акт "доброї волі", – зазначив Братчук.
+                        <br>
+                        Також на карті вказано, що окупанти поки що утримують 4% Миколаївщини, 88% Херсонщини, 67% Запоріжжя, 57% Донеччини, 99% Луганщини та увесь Крим.
+                        <br>
+                        <h2>Україна - найбільш замінована країна світу</h2>
+                        
+                        30% території України заміновано. В Україні 470 тис. га земель сільськогосподарського призначення заміновано, обстежили лише 17,5% замінованих територій. З них 57 тис. га — сільськогосподарського призначення, зазначили в Міністерстві аграрної політики та продовольства України.
+                        <br>
+                        Скільки ж років знадобиться, аби зробити Україну безпечною для проживання? За оцінками експертів - мінімум 10 років.
+                        <br>
+                        <h2>Екологічні наслідки</h2>
+                       
+                        За даними Державної екологічної інспекції станом на січень 2023 року, за 11 місяців військової агресії РФ збитки для екології України складають вже понад 1 трильйон 743 мільярди гривень, або понад 47,6 мільярда доларів. І це тільки приблизні розрахунки, поки досі залишається окупованою частина українських територій.
+                        <br>
+                        Через російське вторгнення понад 59 тисяч га лісів та інших насаджень були випалені ракетами та снарядами, повідомляє Державна екологічна інспекція.
+                        <br>
+                        У воду потрапили вже 1,5 тисячі тонн забрудників.
+                        <br>
+                        Також внаслідок 10 місяців війни:
+                        <br>
+                        <br>
+                        •	понад 280 тисяч м² ґрунтів забруднено небезпечними речовинами;
+                        <br>
+                        •	11 млн м² земель засмічено залишками знищених об’єктів та боєприпасів;
+                        <br>
+                        •	майже 686 200 тонн нафтопродуктів згоріло під час обстрілів, забруднивши атмосферне повітря небезпечними речовинами;
+                        <br>
+                        •	більш ніж 979 тис. м² об'єктів, зокрема критичної інфраструктури, були знищені, а їхні залишки спричинили шкоду довкіллю;
+                        <br>
+                        •	932,5 кг – маса сторонніх предметів, матеріалів, відходів чи  інших речовин;
+                        <br>
+                        •	410 150 000 м³ – обсяг самовільно забраної чи використаної води.
+                        <br>
+                        <h2>Природо-заповідні зони</h2>
+                        
+                        Загалом через військові дії окупанта 900 заповідних територій України сьогодні перебувають в небезпеці. Сюди увійшли 1,2 млн га або близько 30% площі всіх природоохоронних територій України. Тут ростуть тисячі видів рослин, які занесені до Червоної книги України і охороняються законом.
+                        <br>
+                        <h2>Соціально-економічні наслідки</h2>
+                        
+                        Війна призвела до скорочення робочих місць і доходів, зменшення купівельної спроможності і обсягів накопичених активів. У 2022 році національна економіка втратила 29,2% реального ВВП, а 13,5 млн. осіб змушені були покинути свої домівки. Більше 7 млн осіб опинилися за межею бідності, а рівень бідності сягнув 24% населення.
+                        <br>
+                        Експерти Світового банку і Єврокомісії оцінюють пошкодження від війни в Україні в період з 24 лютого 2022 р. до 24 лютого 2023 р. в сумі 134,7 млрд доларів, а потреби у відновленні – 410,6 млрд. доларів.
+                        <br>
+                        <img src="збитки.png" alt="картинка" style="display: block; margin: 0 auto;">
+                        <br>
+                        Якщо говорити про пошкодження або прямі втрати від першого року війни, то за оцінками Світового банку і його партнерів найбільших втрат зазнали житловий сектор (38% сумарних пошкоджень), транспорт (26%), енергетика (8%), промисловість і торгівля (8%), сільське господарство (7%). Зокрема, за рік російсько-української війни руйнувань і пошкоджень зазнали 1,4 житлових приміщень (окремих квартир, будинків), серед них 135 тис. – приватних будинків і 39 тис. гуртожитків.
+                        <br>
+                        У загальній сумі потреб на відновлення (410,6 млрд. доларів) транспорту – 116,2 млрд. доларів, енергетики – 75,9 млрд. доларів, промисловості і торгівлі – 68,5 млрд. доларів, житлового сектора – 64,1 млрд. доларів, сільського господарства – 40,4 млрд. доларів.
+                        <br>
+                        <h2>Що відомо про біженців з України</h2>
+                      
+                        7 мільйонів 900 тисяч осіб виїхали за межі країни, шукаючи прихистку за кордоном. Це — 20% від фактичного населення всієї нашої держави.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            
+          </li>
+          <div class="modal--information">
+            <p>© 2023 Розробка Булих Валерії.</p>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Війна</li>
+    <li>Наслідки</li>
+    <li>Бойові дії</li>
+    <li>Повітряні тривоги</li>
+    <li>Статистика</li>
+  </ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/vendor/hammer-2.0.8.js"></script>
+<script src="assets/js/functions.js"></script>
+</body>
+</html>
